@@ -16,10 +16,10 @@ The various rate-limit / throttling settings will also prevent its use for DOS a
 
 Project is in alpha. Current RPC settings if wanting to test:
 
-Network Name: xdcchain.xyz PublicNexus
-RPC URL: https://publicnexus.xdcchain.xyz
-Chain ID: 50
-Currency Symbol: XDC
-Explorer: https://explorer.xinfin.network
+- Network Name: xdcchain.xyz PublicNexus
+- RPC URL: https://publicnexus.xdcchain.xyz
+- Chain ID: 50
+- Currency Symbol: XDC
+- Explorer: https://explorer.xinfin.network
 
 Because Publicnexus uses all known public RPCs, it means this access point only supports the xdc prefix at the moment. A secondary access point can be added at a later point specifically for supporting the 0x-prefix if needed)
