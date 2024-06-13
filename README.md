@@ -29,8 +29,8 @@ Because Publicnexus uses all known public RPCs, it means this access point only 
 Server running Ubuntu 22.04
 
 Deployed on server:
-- Apache2 (_modules enabled: proxy, proxy_http, proxy_balancer, lbmethod_byrequests, ssl, ratelimit_)
-- Certbot (_for LetsEncrypt CA cert/key_)
-- Python3
+- apache2 (_modules enabled: proxy, proxy_http, proxy_balancer, lbmethod_byrequests, ssl, ratelimit_)
+- certbot (_for LetsEncrypt CA cert/key_)
+- python3
 - ufw
 - fail2ban
