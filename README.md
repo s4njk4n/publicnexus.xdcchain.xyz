@@ -96,5 +96,5 @@ Then in the crontab file:
 ---
 ### To do
 - Further determine the optimal maximum permissible block height lag. This will become apparent with further usage.
-- Add more public RPCs. The more RPCs used in rotation, the less percentage effect a failing RPC will have on success/failure of overall transaction burden. (Transactions are allocated on a round-robin basis between Active RPCs)
+- Add more public RPCs. The more RPCs used in rotation, the less percentage effect a failing RPC will have on success/failure of overall transaction burden until it is removed. (Transactions are allocated on a round-robin basis between Active RPCs)
 ---
