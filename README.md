@@ -34,3 +34,63 @@ Deployed on server:
 - python3
 - ufw
 - fail2ban
+
+### apache2
+- Should already be deployed on your server
+- Enable modules with:
+```
+a2enmod proxy
+a2enmod proxy_http
+a2enmod proxy_balancer
+a2enmod lbmethod_byrequests
+a2enmod ssl
+a2enmod ratelimit
+```
+### certbot and python3
+- Install, get certificate, and set up apache SSL configs with:
+```
+apt install certbot python3 python3-certbot-apache -y
+certbot --apache
+```
+### ufw
+- Install and setup firewall:
+```
+apt install ufw
+ufw default deny incoming
+ufw default allow outgoing
+ufw allow 443
+ufw allow 22
+ufw enable
+reboot
+```
+Port 22 is default SSH port. You can see instructions on how to change it by modifying /etc/ssh/sshd_config as described in [this article](https://www.xdc.dev/s4njk4n/securing-your-xdc-masternode-running-on-ubuntu-2004lts-57k8).
+Port 443 for SSL
+### fail2ban
+- Follow instructions in [this article](https://www.xdc.dev/s4njk4n/securing-your-xdc-masternode-running-on-ubuntu-2004lts-57k8).
+### Further security
+Also recommend:
+- Setting up ssh-key authentication to access the server
+- Consider disabling passwords or if keeping passwords then consider making them VERY long and complex consisting of upper/lower case letters, numbers + symbols. Disabling password login to root account can also be helpful as it is an easy to guess username on your server so it is easier to bruteforce.
+---
+### Apache config
+This is located in:
+- /etc/apache2/sites-enabled/000-default.conf <-- Certbot will write http to https redirects in here
+- /etc/apache2/sites-enabled/000-default-le-ssl.conf   <-- Certbot will add your SSL setup in here
+You will need to modify these files to replace with your own domain name of course if you are establishing your own system.
+### Scripts/Files
+Our scripts are located at ~/RPC_Check/
+- **rpc_check.sh** - This performs all the functions required to check RPCs, interpret responses, modify the load-balancer's origin servers, and (gracefully) apply the new origin server addresses. _Note: curl is set to allow max 10sec for an RPC to respond. No response in this time = broken RPC. Also remember to set your variables at the top of this file with absolute path locations etc. as we are going to run this script as a cron job._
+- **rpc_check-pause.sh** - In the event that you need to modify files manually and don't want rpc_check.sh running, this script will create a pause flag that inhibits the actions of rpc_check.sh.
+- **rpc_check-restart.sh** - This script deletes the pause flag so rpc_check.sh will then kick off where it left off.
+- **rpc_pool.csv** - This is a csv file containing 3 fields about each RPC it can potentially send traffic to: The RPC address/URL, that RPC's health-status, that RPC's last recorded block height
+- **events.log** - Our log file. By default, rpc_check.sh will limit this file to the last 5000 lines of log history. You can allow a longer history by just modifying rpc_check.sh.
+
+rpc_check.sh is set to run minutely as a cron job:
+```
+crontab -e
+```
+Then in the crontab file:
+```
+* * * * * /bin/bash /root/RPC_Check/rpc_check.sh >/dev/null 2>&1
+```
+---
