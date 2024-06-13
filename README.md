@@ -1,8 +1,6 @@
-# https://publicnexus.xdcchain.xyz
+# publicnexus.xdcchain.xyz
 
-To solve public/community RPC availability issues we've built a type of "Layer 2 RPC Stable Access Point" with integrated health-checks.
-
-Current location is at https://publicnexus.xdcchain.xyz
+To solve public/community RPC availability issues we've built a type of **"Layer 2 RPC Stable Access Point"** with integrated health-checks.
 
 Publicnexus is essentially a load-balancer with all known public RPCs on XDC network set as its origin/backend servers.
 
@@ -16,10 +14,23 @@ The various rate-limit / throttling settings will also prevent its use for DOS a
 
 Project is in alpha. Current RPC settings if wanting to test:
 
-- Network Name: xdcchain.xyz PublicNexus
-- RPC URL: https://publicnexus.xdcchain.xyz
-- Chain ID: 50
-- Currency Symbol: XDC
-- Explorer: https://explorer.xinfin.network
+- **Network Name:** xdcchain.xyz PublicNexus
+- **RPC URL:** https://publicnexus.xdcchain.xyz
+- **Chain ID:** 50
+- **Currency Symbol:** XDC
+- **Explorer:** https://explorer.xinfin.network
 
 Because Publicnexus uses all known public RPCs, it means this access point only supports the xdc prefix at the moment. A secondary access point can be added at a later point specifically for supporting the 0x-prefix if needed)
+
+---
+
+## Server setup
+
+Server running Ubuntu 22.04
+
+Deployed on server:
+- Apache (modules enabled: proxy, proxy_http, proxy_balancer, lbmethod_byrequests, ssl, ratelimit)
+- Certbot (for LetsEncrypt CA cert/key)
+- Python3
+- ufw
+- fail2ban
