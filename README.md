@@ -76,7 +76,7 @@ Also recommend:
 This is located in:
 - /etc/apache2/sites-enabled/000-default.conf <-- Certbot will write http to https redirects in here
 - /etc/apache2/sites-enabled/000-default-le-ssl.conf   <-- Certbot will add your SSL setup in here
-You will need to modify these files to replace with your own domain name of course if you are establishing your own system.
+You will need to modify these files to replace with your own domain name of course if you are establishing your own system. Also need to add load balancer configuration as shown.
 ### Scripts/Files
 Our scripts are located at ~/RPC_Check/
 - **rpc_check.sh** - This performs all the functions required to check RPCs, interpret responses, modify the load-balancer's origin servers, and (gracefully) apply the new origin server addresses. _Note: curl is set to allow max 10sec for an RPC to respond. No response in this time = broken RPC. Also remember to set your variables at the top of this file with absolute path locations etc. as we are going to run this script as a cron job. Also at present the permitted lag in block height allowed by the script for an RPC to retain its "Active" status we have arbitrarily set to 4 blocks - which would be about 8 seconds based on an average block time of 2sec on the network. After further testing a more appropriate block-height lag tolerance may be determined._
