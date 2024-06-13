@@ -94,3 +94,6 @@ Then in the crontab file:
 * * * * * /bin/bash /root/RPC_Check/rpc_check.sh >/dev/null 2>&1
 ```
 ---
+### To do
+- Further determine the optimal maximum permissible block height lag. This will become apparent with further usage.
+---
