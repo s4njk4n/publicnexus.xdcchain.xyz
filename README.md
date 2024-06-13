@@ -1,3 +1,5 @@
+# https://publicnexus.xdcchain.xyz
+
 To solve public/community RPC availability issues we've built a type of "Layer 2 RPC Stable Access Point" with integrated health-checks.
 
 Current location is at https://publicnexus.xdcchain.xyz
