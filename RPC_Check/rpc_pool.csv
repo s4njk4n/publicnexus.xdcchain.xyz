@@ -1,0 +1,12 @@
+RPC_Address,Health_Status,Block_Height
+https://rpc.xdcrpc.com,Active,75914207
+https://rpc1.xinfin.network,Active,75914207
+https://erpc.xdcrpc.com,Active,75914207
+https://earpc.xinfin.network,Inactive,Invalid Response
+https://rpc.ankr.com/xdc,Active,75914207
+https://api.tatum.io/v3/blockchain/node/xdc-mainnet,Active,75914207
+https://rpc.xinfin.network,Active,75914207
+https://rpc.xdc.org,Active,75914207
+https://erpc.xinfin.network,Active,75914206
+https://rpc-xdc.icecreamswap.com,Inactive,Invalid Response
+https://rpc.primenumbers.xyz,Active,75914207
