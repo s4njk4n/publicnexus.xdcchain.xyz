@@ -8,7 +8,7 @@ It checks each RPC's block height in parallel once per minute. If no response, o
 
 Conversely, if an RPC improves to meet criteria again, then it gets re-added to the list of origin/backend servers and will once again commence receiving RPC traffic.
 
-We've added in a throttling mechanism for each IP that accesses it so commercial projects that will need higher transaction throughput won't be able to use it (as they should probably run their own private RPC). That way it is specifically for public/community use as the allowed-rate-per-IP will be adequate for them.
+To mitigate potential load on public RPCs from unexpectedly high volume single-party usage we've added in a throttling mechanism for each IP address. The allowed-rate-per-IP is set to be adequate for general public users. (If anyone requires private reliable high-speed RPC access, let us know and we may be able to help facilitate that separately).
 
 The various rate-limit / throttling settings will also prevent its use for DOS and other malicious activity.
 
