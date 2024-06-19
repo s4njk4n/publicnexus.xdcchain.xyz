@@ -5,6 +5,7 @@ Access points have been added for Mainnet Standard RPC, Mainnet 0x-enabled RPC, 
 We will add access points for Archive nodes shortly.
 
 **END UPDATE**
+
 ---
 
 # publicnexus.xdcchain.xyz
