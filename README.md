@@ -1,3 +1,8 @@
+EDIT 19/06/2024: Latest updates at https://www.xdc.dev/s4njk4n/publicnexus-upgraded-mainnetapothem-rpcwss-xdc0x-prefixes-supported-ge1
+Access points have been added for Mainnet Standard RPC, Mainnet 0x-enabled RPC, Mainnet Standard WSS, Mainnet 0x-enabled WSS, Apothem Testnet Standard RPC, Apothem Testnet 0x-enabled RPC, Apothem Testnet Standard WSS, Apothem Testnet 0x-enabled WSS. We will add access points for Archive nodes shortly.
+
+---
+
 # publicnexus.xdcchain.xyz
 
 To solve public/community RPC availability issues we've built a type of **"Layer 2 RPC Stable Access Point"** with integrated health-checks.
@@ -12,15 +17,7 @@ To mitigate potential load on public RPCs from unexpectedly high volume single-p
 
 The various rate-limit / throttling settings will also prevent its use for DOS and other malicious activity.
 
-Project is in alpha. Current RPC settings if wanting to test:
-
-- **Network Name:** xdcchain.xyz PublicNexus
-- **RPC URL:** https://publicnexus.xdcchain.xyz
-- **Chain ID:** 50
-- **Currency Symbol:** XDC
-- **Explorer:** https://explorer.xinfin.network
-
-Because Publicnexus uses all known public RPCs, it means this access point only supports the xdc prefix at the moment. A secondary access point can be added at a later point specifically for supporting the 0x-prefix if needed)
+Current RPC settings if wanting to test can be found at https://publicnexus.xdcchain.xyz
 
 ---
 
