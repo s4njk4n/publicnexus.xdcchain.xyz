@@ -195,8 +195,8 @@ fi
 if [ -f "$LOG_FILE" ]; then
     total_lines=$(wc -l < "$LOG_FILE")
     if [ "$total_lines" -gt 5000 ]; then
-        lines_to_keep=$((total_lines - 5000))
-        sed -i "1,${lines_to_keep}d" "$LOG_FILE"
+        lines_to_remove=$((total_lines - 5000))
+        sed -i "1,${lines_to_remove}d" "$LOG_FILE"
         echo "$(date +"%Y-%m-%d %H:%M:%S") - events.log trimmed to 5000 lines" >> "$LOG_FILE"
     fi
 fi
