@@ -1,10 +1,24 @@
+**EDIT 25/06/2024:** 
+
+PublicNexus is now listed on Chainlist.org
+
+XDC Mainnet:
+https://chainlist.org/chain/50
+
+Apothem Testnet:
+https://chainlist.org/chain/51
+
+**END EDIT**
+
+---
+
 **EDIT 19/06/2024:** Latest updates at https://www.xdc.dev/s4njk4n/publicnexus-upgraded-mainnetapothem-rpcwss-xdc0x-prefixes-supported-ge1
 
 Access points have been added for Mainnet Standard RPC, Mainnet 0x-enabled RPC, Mainnet Standard WSS, Mainnet 0x-enabled WSS, Apothem Testnet Standard RPC, Apothem Testnet 0x-enabled RPC, Apothem Testnet Standard WSS, Apothem Testnet 0x-enabled WSS. 
 
 We will add access points for Archive nodes shortly.
 
-**END UPDATE**
+**END EDIT**
 
 ---
 
